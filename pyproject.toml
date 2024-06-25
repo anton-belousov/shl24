@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.12"
 python-dotenv = "^1.0.1"
 llama-index-core = "^0.10.49"
 llama-index-readers-file = "^0.1.25"

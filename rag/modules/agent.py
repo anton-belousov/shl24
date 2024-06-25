@@ -14,6 +14,7 @@ from llama_index.core.tools import QueryEngineTool
 from rag.llm import get_llm
 from rag.llm.yandex import YandexLLM
 from rag.modules import internet, search
+from rag.modules.guard import is_prompt_injection
 
 logger = getLogger(__name__)
 
@@ -77,6 +78,10 @@ stop: Ответ был найден ранее и присутствует в �
     def custom_query(self, query_str: str) -> str:
         """Custom query handler"""
         logger.debug("custom_query, query_str=%s", query_str)
+
+        if is_prompt_injection(self.llm, query_str):
+            logger.warning("custom_query, possible prompt injection detected")
+            return "Извините, я не могу найти ответ на ваш запрос."
 
         current_response: str = ""
         tool_history = {}
