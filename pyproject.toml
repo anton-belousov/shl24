@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "SHL24"
+version = "0.1.0"
+description = "Создание модульной (и желательно эффективной) RAG-системы"
+authors = ["Anton Belousov <anton@belousov.co>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.1"
+llama-index-core = "^0.10.49"
+llama-index-readers-file = "^0.1.25"
+llama-index-vector-stores-weaviate = "^1.0.0"
+llama-index-embeddings-langchain = "^0.1.2"
+langchain = "^0.2.5"
+llama-index-tools-brave-search = "^0.1.0"
+inscriptis = "^2.5.0"
+fastapi = "^0.111.0"
+uvicorn = "^0.30.1"
+asyncpg = "^0.29.0"
+sqlalchemy = "^2.0.31"
+langchain-community = "^0.2.5"
+yandexcloud = "^0.297.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
