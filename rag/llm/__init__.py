@@ -5,7 +5,7 @@ LLM functions
 from logging import getLogger
 from typing import Optional
 
-from langchain_community.llms.yandex import YandexGPT
+from langchain_community.chat_models import ChatYandexGPT
 
 from rag.config import YANDEX_API_KEY, YANDEX_FOLDER_ID
 from rag.llm.yandex import YandexLLM
