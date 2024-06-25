@@ -22,6 +22,7 @@ asyncpg = "^0.29.0"
 sqlalchemy = "^2.0.31"
 langchain-community = "^0.2.5"
 yandexcloud = "^0.297.0"
+langsmith = "^0.1.82"
 
 
 [build-system]
