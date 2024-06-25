@@ -10,6 +10,8 @@
 Содержит следующие *внутренние* компоненты:
 
 - Само приложение (`main.py`)
+- Запускалка индексирования (`indexer.py`)
+- Оценщик качества (`evaluate.py`)
 - Индексатор - (`rag/modules/index.py`)
 - Агент (`rag/modules/agent.py`)
 - Маршрутизатор (`rag/modules/route.py`)
@@ -66,6 +68,10 @@
 Запуск API:
 
     python main.py
+
+Проверка адекватности ответов:
+
+    python evaluate.py
 
 ## Очистка БД
 

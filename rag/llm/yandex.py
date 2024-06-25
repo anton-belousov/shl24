@@ -53,11 +53,7 @@ class YandexLLM(LLM):
         **kwargs: Any,
     ) -> ChatResponse:
         logger.debug("achat, messages=%s", messages)
-        return ChatResponse(
-            message=ChatMessage(
-                role=MessageRole.ASSISTANT, content="Hello, I am Yandex GPT!"
-            )
-        )
+        return self.chat(messages=messages)
 
     @llm_chat_callback()
     async def astream_chat(
