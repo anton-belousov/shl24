@@ -25,10 +25,6 @@ def get_tool() -> QueryEngineTool:
         vector_store=vector_store,
         embed_model=get_embedding_model(),
     )
-    logger.debug(
-        "retrieve test 1, %s", index.as_retriever().retrieve("Question answering")
-    )
-    logger.debug("retrieve test 2, %s", index.as_retriever().retrieve("MERA"))
 
     vector_query_engine: query_engine.BaseQueryEngine = index.as_query_engine(
         vector_store_query_mode="hybrid",
@@ -41,8 +37,8 @@ def get_tool() -> QueryEngineTool:
         query_engine=vector_query_engine,
         name="database_search_tool",
         description=(
-            "Полезен для поиска информации об LLM (больших языковых моделях), RAG и донастройке моделей. "
-            "Если запрос не относится к этим темам, этот инструмент не должен быть выбран."
+            "Полезен для поиска информации об LLM (больших языковых моделях), RAG, нейросетях, метриках. "
+            "При поиске терминов стоит использовать сначала этот инструмент."
         ),
     )
 

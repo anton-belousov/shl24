@@ -24,8 +24,11 @@ def get_llm() -> YandexLLM:
         return _model
 
     _model = YandexLLM(
-        yandex_gpt=YandexGPT(
-            api_key=YANDEX_API_KEY, folder_id=YANDEX_FOLDER_ID, model_name="yandexgpt"
+        yandex_gpt=ChatYandexGPT(
+            api_key=YANDEX_API_KEY,
+            folder_id=YANDEX_FOLDER_ID,
+            model_name="yandexgpt",
+            temperature=0.01,
         )
     )
 

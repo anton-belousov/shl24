@@ -8,7 +8,7 @@ from uuid import UUID
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from rag.db.sql.models import Chat, Message
-from rag.modules import router
+from rag.modules import agent, router
 from rag.service import chat
 
 logger = getLogger(__name__)
@@ -27,7 +27,6 @@ async def process_user_message(
         raise ValueError("Chat not found")
 
     await chat.create_message(db, chat_id, message, False)
-    response: str = router.run(message)
-    logger.debug("process_user_message, response=%s", type(response))
+    response: str = agent.run(message)
 
     return await chat.create_message(db, chat_id, response, True)

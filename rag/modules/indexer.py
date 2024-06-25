@@ -50,9 +50,4 @@ def run():
         show_progress=True,
     )
 
-    logger.debug(
-        "retriever test 1, %s", index.as_retriever().retrieve("Question answering")
-    )
-    logger.debug("retriever test 2, %s", index.as_retriever().retrieve("MERA"))
-
     logger.debug("run, vector store index created, %s", index)

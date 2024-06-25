@@ -11,6 +11,7 @@
 
 - Само приложение (`main.py`)
 - Индексатор - (`rag/modules/index.py`)
+- Агент (`rag/modules/agent.py`)
 - Маршрутизатор (`rag/modules/route.py`)
 - Поиск по базе знаний (`rag/modules/search.py`)
 - Инструмент поиска в интернете (`rag/modules/internet.py`)
@@ -58,15 +59,11 @@
 
 Индексация данных:
 
-    python main.py index
+    python indexer.py
 
-Поиск информации в базе данных:
+Запуск API:
 
-    python main.py query "what is MERA benchmark for LLM?"
-
-Поиск в интернете:
-
-    python main.py query "как называется столица Буркина-Фасо?"
+    python main.py
 
 ## Очистка БД
 
