@@ -27,6 +27,6 @@ async def process_user_message(
         raise ValueError("Chat not found")
 
     await chat.create_message(db, chat_id, message, False)
-    response: str = agent.run(message)
+    response: str = router.run(message)
 
     return await chat.create_message(db, chat_id, response, True)
