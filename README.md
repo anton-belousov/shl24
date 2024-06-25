@@ -27,8 +27,8 @@
 - Git, Git LFS
 - Python 3.12+
 - [Poetry](https://python-poetry.org/)
-- Ключ Brave Search API - можно использовать мой, который я выдам в задании, или [зарегистрировать свой](https://api.search.brave.com/register)
-- Yandex GPT API
+- Ключ Brave Search API - можно использовать мой, который я выдам отдельно, или [зарегистрировать свой](https://api.search.brave.com/register)
+- Ключ Yandex GPT API - можно использовать мой, который я выдам отдельно
 - PostgeSQL
 
 ## Установка
@@ -40,7 +40,7 @@
 Настройка производится через переменные окружения, их можно задать в локальном файле `.env`. 
 Переменные читаются автоматически при запуске программы (в скобках - значения по умолчанию):
 
-- `INDEX_NAME` (shl24) - название индекса в Weaviate
+- `INDEX_NAME` (SaintHighLoad2024) - название индекса в Weaviate
 - `DATA_PATH` (./data) - путь к папке с исходными данными
 - `WEAVIATE_DATA_PATH` (./weaviate) - путь к папке, где Weaviate будет хранить данные
 - `HYBRID_ALPHA` (0.5) - приоритет векторной части в гибридном поиске. Значение 0.5 - результаты семантического поиска и поиска по ключевым словам равнозначны.
@@ -48,6 +48,8 @@
 - `CHUNK_SIZE` (1024) - размер чанка при разбиении исходных данных
 - `CHUNK_OVERLAP` (20) - размер "перекрытия" при разбиении исходных данных
 - `BRAVE_SEARCH_API_KEY` (none) - ключ Brave Search API
+- `YANDEX_API_KEY` (none) - ключ Yandex API
+- `YANDEX_FOLDER_ID` (none) - ID директории Yandex API
 
 ## Создание БД SQL
 
