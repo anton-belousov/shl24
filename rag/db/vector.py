@@ -8,10 +8,15 @@ from typing import Optional
 from langchain_community.embeddings.yandex import YandexGPTEmbeddings
 from llama_index.embeddings.langchain import LangchainEmbedding
 from llama_index.vector_stores.weaviate import WeaviateVectorStore
-from weaviate.embedded import EmbeddedOptions
 
-from rag.config import INDEX_NAME, WEAVIATE_DATA_PATH, YANDEX_API_KEY, YANDEX_FOLDER_ID
-from weaviate import WeaviateClient
+from rag.config import (
+    INDEX_NAME,
+    WEAVIATE_HOST,
+    WEAVIATE_PORT,
+    YANDEX_API_KEY,
+    YANDEX_FOLDER_ID,
+)
+from weaviate import WeaviateClient, connect_to_local
 
 _client: Optional[WeaviateClient] = None
 _store: Optional[WeaviateVectorStore] = None
@@ -29,10 +34,7 @@ def get_vector_store() -> WeaviateVectorStore:
         return _store
 
     if _client is None:
-        _client = WeaviateClient(
-            embedded_options=EmbeddedOptions(persistence_data_path=WEAVIATE_DATA_PATH)
-        )
-        _client.connect()
+        _client = connect_to_local(host=WEAVIATE_HOST, port=WEAVIATE_PORT)
 
     _store = WeaviateVectorStore(_client, index_name=INDEX_NAME)
 

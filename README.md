@@ -73,6 +73,22 @@
 
     python evaluate.py
 
+Запуск через Docker Compose:
+
+    # Установка переменных окружения
+    export BRAVE_SEARCH_API_KEY=your_key
+    export YANDEX_API_KEY=your_key
+    export YANDEX_FOLDER_ID=your_folder_id
+
+    # Запуск сервисов
+    docker compose up -d
+
+    # Просмотр логов
+    docker compose logs -f
+
+    # Остановка сервисов
+    docker compose down
+
 ## Очистка БД
 
 1. "убить" процесс weaviate embedded, если он запущен

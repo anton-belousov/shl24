@@ -16,6 +16,9 @@ DATABASE_USER = environ.get("DATABASE_USER", "shl24")
 DATABASE_PASSWORD = environ.get("DATABASE_PASSWORD", "shl24")
 DATABASE_URL = f"postgresql+asyncpg://{DATABASE_USER}:{DATABASE_PASSWORD}@{DATABASE_HOST}:{DATABASE_PORT}/{DATABASE_NAME}"
 
+WEAVIATE_HOST = environ.get("WEAVIATE_HOST", "localhost")
+WEAVIATE_PORT = environ.get("WEAVIATE_PORT", "8080")
+
 INDEX_NAME = environ.get("INDEX_NAME", "SaintHighLoad2024")
 DATA_PATH = environ.get("DATA_PATH", "./data")
 WEAVIATE_DATA_PATH = environ.get("WEAVIATE_DATA_PATH", "./weaviate")
